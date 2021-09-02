@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:floating_search_bar/floating_search_bar.dart';
 
 class MyHomePage extends StatefulWidget {
