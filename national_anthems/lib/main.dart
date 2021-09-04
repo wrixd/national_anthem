@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 import 'pages/dashboard.dart';
+import 'package:flutter/services.dart';
 
-void main() {
-  runApp(MyApp());
+Future main() async {
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
+  runApp(nationalAnthems());
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+// ignore: camel_case_types
+class nationalAnthems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'National Anthems with Lyrics',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'Default_page'),
     );
   }
 }
