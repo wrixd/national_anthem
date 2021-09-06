@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'pages/dashboard.dart';
 import 'package:flutter/services.dart';
 
-Future main() async {
-  await SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
+void main() async {
+  // await SystemChrome.setPreferredOrientations([
+  //DeviceOrientation.portraitUp,
+  //DeviceOrientation.portraitDown,
+//  ]);
 
   runApp(nationalAnthems());
 }
