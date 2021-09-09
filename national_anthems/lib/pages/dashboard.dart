@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 import 'package:national_anthems/widgets/list.dart';
 
@@ -12,6 +15,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List _anthems = [];
+
+  // Fetch content from the json file
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString('assets/sample.json');
+    final data = await jsonDecode(response);
+    setState(() {
+      _anthems = data["anthems"];
+    });
+  }
+
   Widget _searchBar() {
     final isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
@@ -63,6 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    readJson();
     return Scaffold(
       appBar: AppBar(
         title: Text(
