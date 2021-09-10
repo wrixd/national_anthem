@@ -30,6 +30,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   sqflite: ^2.0.0+4
   material_floating_search_bar: ^0.3.4
+  quds_ui_kit: ^0.0.7+5
 dev_dependencies:
   flutter_test:
     sdk: flutter
