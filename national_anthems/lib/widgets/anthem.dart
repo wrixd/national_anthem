@@ -1,17 +1,13 @@
-import 'package:json_annotation/json_annotation.dart';
-part 'anthem.g.dart';
+class Anthem {
+  String? field7;
+  String? image;
+  String? lyricsEnglish;
+  String? lyricsEnglishtransliteration;
+  String? nation;
+  String? url;
+  int? id;
 
-@JsonSerializable()
-class anthem {
-  String field7,
-      image,
-      lyricsEnglish,
-      lyricsEnglishtransliteration,
-      nation,
-      url;
-  int id;
-
-  anthem({
+  Anthem({
     required this.field7,
     required this.url,
     required this.lyricsEnglish,
@@ -21,7 +17,13 @@ class anthem {
     required this.id,
   });
 
-  factory anthem.fromJson(Map<String, dynamic> data) => _$anthemFromJson(data);
-
-  Map<String, dynamic> toJson() => _$anthemToJson(this);
+  Anthem.fromJson(Map<String, dynamic> json) {
+    field7 = json['field7'];
+    image = json['image'];
+    lyricsEnglish = json['lyricsEnglish'];
+    lyricsEnglishtransliteration = json['lyricsEnglishtransliteration'];
+    nation = json['nation'];
+    url = json['url'];
+    id = json['id'];
+  }
 }
